@@ -1,11 +1,8 @@
-/********************************************************/
-/*	Author: 	mBravo18								*/
-/*	SWC: 		NESTED VECTORED INTERRUPT CONTROLLER	*/
-/*	Layer: 		MCAL									*/
-/*	Version: 	1.0										*/
-/*	Date: 		SEPTEMPER 17, 2023						*/
-/*	Last Edit:	N/A										*/
-/********************************************************/
+/******************************************************/
+/*   Author:    mBravo18                              */
+/*   SWC:       NESTED VECTORED INTERRUPT CONTROLLER	*/
+/*   Layer:     MCAL                                  */
+/******************************************************/
 
 #ifndef _MNVIC_INTERFACE_H_
 #define _MNVIC_INTERFACE_H_
@@ -79,7 +76,6 @@
 #define SPI4				84
 
 
-
 void	MNVIC_voidEnableInterrupt(u8 ARG_u8InteruptSource);
 void	MNVIC_voidDisableInterrupt(u8 ARG_u8InteruptSource);
 
@@ -89,6 +85,5 @@ void	MNVIC_voidClearPendingFlag(u8 ARG_u8InteruptSource);
 u8		MNVIC_u8GetActiveFlag(u8 ARG_u8InteruptSource);
 
 void 	MNVIC_voidSetPriority(u8 ARG_u8InteruptPosition,s8 ARG_s8InteruptPriority, u8 ARG_u8GroupPriority , u8 ARG_u8SubPriority , u32 ARG_u8NestMode);
-
 
 #endif
