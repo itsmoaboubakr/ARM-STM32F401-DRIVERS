@@ -1,11 +1,8 @@
-/********************************************************/
-/*	Author: 	mBravo18								*/
-/*	SWC: 		NESTED VECTORED INTERRUPT CONTROLLER	*/
-/*	Layer: 		MCAL									*/
-/*	Version: 	1.0										*/
-/*	Date: 		SEPTEMPER 17, 2023						*/
-/*	Last Edit:	N/A										*/
-/********************************************************/
+/******************************************************/
+/*   Author:    mBravo18                              */
+/*   SWC:       NESTED VECTORED INTERRUPT CONTROLLER  */
+/*   Layer:     MCAL                                  */
+/******************************************************/
 
 /*library Includes*/
 #include "LSTD_types.h"
@@ -17,22 +14,26 @@
 
 void MNVIC_voidEnableInterrupt(u8 ARG_u8InteruptSource) //u8 since max no. of external interupt is 240, also 84 is only available
 {
-	NVIC_ISER[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32)); /*	'/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg	*/
+	/* '/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg */
+	NVIC_ISER[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32)); 
 }
 
 void MNVIC_voidDisableInterrupt(u8 ARG_u8InteruptSource) //u8 since max no. of external interupt is 240, also 84 is only available
 {
-	NVIC_ICER[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32)); /*	'/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg	*/
+	/* '/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg */
+	NVIC_ICER[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32)); 
 }
 
 void MNVIC_voidSetPendingFlag(u8 ARG_u8InteruptSource) //u8 since max no. of external interupt is 240, also 84 is only available
 {
-	NVIC_ISPR[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32)); /*	'/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg	*/
+	/* '/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg */
+	NVIC_ISPR[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32));
 }
 
 void MNVIC_voidClearPendingFlag(u8 ARG_u8InteruptSource) //u8 since max no. of external interupt is 240, also 84 is only available
 {
-	NVIC_ICPR[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32)); /*	'/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg	*/
+	/* '/'by 32 to access array reg and then '%' to get remainder which is bit no. in that corresponding reg */
+	NVIC_ICPR[ARG_u8InteruptSource / 32] = (1 << (ARG_u8InteruptSource % 32));
 }
 
 u8 MNVIC_u8GetActiveFlag(u8 ARG_u8InteruptSource)
