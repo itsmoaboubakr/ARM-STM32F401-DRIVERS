@@ -1,15 +1,11 @@
-/********************************************************/
-/*	Author: 	mBravo18								*/
-/*	SWC: 		NESTED VECTORED INTERRUPT CONTROLLER	*/
-/*	Layer: 		MCAL									*/
-/*	Version: 	1.0										*/
-/*	Date: 		SEPTEMPER 17, 2023						*/
-/*	Last Edit:	N/A										*/
-/********************************************************/
+/******************************************************/
+/*   Author:    mBravo18                              */
+/*   SWC:       NESTED VECTORED INTERRUPT CONTROLLER	*/
+/*   Layer:     MCAL                                  */
+/******************************************************/
 
 #ifndef _MNVIC_PRIVATE_H_
 #define _MNVIC_PRIVATE_H_
-
 
 //Interrupt set-enable register
 #define NVIC_ISER ((volatile u32*)0xE000E100)
@@ -31,6 +27,5 @@
 
 //Software trigger interrupt register
 #define NVIC_STIR *((volatile u32*)0xE000EF00)
-
 
 #endif
